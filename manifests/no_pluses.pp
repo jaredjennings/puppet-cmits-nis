@@ -20,19 +20,6 @@
 # not be the case anywhere.
 
 class nis::no_pluses {
-    define no_pluses_in() {
-        exec { "no_pluses_in_${name}":
-            command => "/bin/echo \
-                ---- FOUND A PLUS CHARACTER IN ${name} ----",
-            onlyif => [
-                "test -f ${name}",
-                "grep '^+:*' ${name} >&/dev/null",
-            ],
-            logoutput => true,
-            loglevel => err,
-        }
-    }
-
 # \index{Per-user .rhosts and .shosts files}
 #
 # \implements{unixsrg}{GEN001980} Make sure there are no pluses in system
