@@ -35,7 +35,7 @@ class nis::no_pluses {
 # \S\ref{define_home::quick} removes \verb!.rhosts! and \verb!.shosts! files
 # from home directories, which effectively ensures that they don't contain
 # pluses.
-    no_pluses_in {
+    nis::no_pluses_in {
         "/etc/passwd":;
         "/etc/shadow":;
         "/etc/group":;
